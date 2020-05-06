@@ -22,3 +22,13 @@
 .cursor-pointer{
   cursor: pointer
 }
+
+.slider{
+  left:0;
+  transition: left 1s;
+}
+
+.disabled{
+  pinter-events:none;
+  opacity: 0.5;
+}
