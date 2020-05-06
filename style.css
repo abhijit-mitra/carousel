@@ -1,0 +1,24 @@
+.carousal{
+  height: 300px;
+}
+
+.flex-none{
+  flex: 0 0 auto;
+}
+
+.arrow{
+  font-size: 40px;
+  top: calc(50% - 40px);
+}
+
+.arrow.left{
+  left: 0px;
+}
+
+.arrow.right{
+  right: 0px;
+}
+
+.cursor-pointer{
+  cursor: pointer
+}
