@@ -12,13 +12,44 @@
     crossOrigin="anonymous" />
     <title>Carousel</title>
     <script src="./carousel.js"></script>
+    <script src='./search.js'></script>
+    <script src='./items.js'></script>
   </head>
   <body>
     <div class="p-5 vh-100 vw-100 position-absolute">
-      <div id="carousel_1"></div>
+      <div class="position-relative mb-5" id='search_1'></div>
+      <div class="mb-5" id="carousel_1"></div>
+      <div class="row" id='search_items_1'>
+      </div>
     </div>
   </body>
     <script>
+    var searchRoot = document.getElementById('search_1');
+    var allProducts = [{
+      'name':'Note 1',
+      'price':'10k',
+      'keywords':['mobiles', 'electronics','gadgets']
+    },{
+      'name':'Note 7',
+      'price':'50k',
+      'keywords':['mobiles', 'electronics','gadgets']
+    },{
+      'name':'Macbook Pro',
+      'price':'50k',
+      'keywords':['laptops', 'electronics','gadgets']
+    },{
+      'name':'Macbook Air',
+      'price':'50k',
+      'keywords':['laptops', 'electronics','gadgets']
+    }];
+    var itemsRoot = document.getElementById('search_items_1');
+    function onSearchComplete(searchResult=[]){
+      var items = new Items(itemsRoot, searchResult);
+      items.render();
+    }
+    var searchBar = new Search(searchRoot, allProducts, onSearchComplete);
+    searchBar.render();
+
     var carouselData = [
       {
         url:'https://i.picsum.photos/id/0/5616/3744.jpg'
@@ -34,9 +65,8 @@
         url:'https://i.picsum.photos/id/1015/6000/4000.jpg'
       }
     ];
-      var root = document.getElementById('carousel_1');
-      var carousel = new Carousel(root, carouselData);
+      var carouselRoot = document.getElementById('carousel_1');
+      var carousel = new Carousel(carouselRoot, carouselData);
       carousel.render();
-      carousel.addClickOnArrow();
     </script>
 </html>

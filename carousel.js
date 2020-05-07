@@ -21,7 +21,8 @@ var Carousel = function(){
                               <i class="fas fa-chevron-right white"></i>
                             </div>`;
                 shell +=`</div>`;
-    this.parent.innerHTML =  shell
+    this.parent.innerHTML =  shell;
+    this.addClickOnArrow();
   };
   Carousel.prototype.handleRightArrowClick = function(){
     const {carouselData} = this;
