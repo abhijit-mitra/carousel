@@ -6,7 +6,7 @@ var Carousel = function(){
                     <div class="slider h-100 w-100 position-absolute">
                       <div class="d-flex w-100 h-100">`;
                         for(let i=0;i<sizeOfCarouselData;i++){
-                          shell += `<div class='w-100 h-100 border flex-none'>
+                          shell += `<div class='w-100 h-100 flex-none'>
                                       <div class='w-100 h-100 d-flex align-items-center justify-content-center'>
                                         <img class='w-100 h-100' src=${carouselData[i].url}/>
                                         </div>
