@@ -8,17 +8,17 @@ var Carousel = function(){
                         for(let i=0;i<sizeOfCarouselData;i++){
                           shell += `<div class='w-100 h-100 border flex-none'>
                                       <div class='w-100 h-100 d-flex align-items-center justify-content-center'>
-                                        ${carouselData[i].name}
+                                        <img class='w-100 h-100' src=${carouselData[i].url}/>
                                         </div>
                                     </div>
                                     `};
                       shell +=`</div>`;
                     shell +=`</div>`;
                   shell += `<div class='arrow left position-absolute cursor-pointer disabled'>
-                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-chevron-left white"></i>
                             </div>
                             <div class='arrow right position-absolute cursor-pointer'>
-                              <i class="fas fa-chevron-right"></i>
+                              <i class="fas fa-chevron-right white"></i>
                             </div>`;
                 shell +=`</div>`;
     this.parent.innerHTML =  shell
