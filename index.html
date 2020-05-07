@@ -16,7 +16,7 @@
     <script src='./items.js'></script>
   </head>
   <body>
-    <div class="p-5 vh-100 vw-100 position-absolute">
+    <div class="p-5 vw-100 position-absolute">
       <div class="position-relative mb-5" id='search_1'></div>
       <div class="mb-5" id="carousel_1"></div>
       <div class="row" id='search_items_1'>
@@ -41,6 +41,22 @@
       'name':'Macbook Air',
       'price':'50k',
       'keywords':['laptops', 'electronics','gadgets']
+    },{
+      'name':'Note 1',
+      'price':'10k',
+      'keywords':['mobiles', 'electronics','gadgets']
+    },{
+      'name':'Shirt',
+      'price':'50k',
+      'keywords':['shirts', 'cloths','cotton']
+    },{
+      'name':'T-Shirt',
+      'price':'50k',
+      'keywords':['shirts', 'cloths','red']
+    },{
+      'name':'skirt',
+      'price':'50k',
+      'keywords':['skirts', 'cloths','blue']
     }];
     var itemsRoot = document.getElementById('search_items_1');
     function onSearchComplete(searchResult=[]){
