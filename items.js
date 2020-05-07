@@ -7,7 +7,8 @@ var Items = function(){
               </div>
             </div>`
   };
-  Items.prototype.render = function(){
+  Items.prototype.render = function(data){
+    this.data = data;
     var itemsHtml = '';
     const sizeOfData = this.data.length;
     for(let i=0; i<sizeOfData;i++){
@@ -16,9 +17,9 @@ var Items = function(){
     }
     this.parent.innerHTML =  itemsHtml;
   };
-  function Items(parent, data){
+  function Items(parent){
     this.parent = parent;
-    this.data = data;
+    this.data = [];
     this.refs = {};
   };
   return Items;

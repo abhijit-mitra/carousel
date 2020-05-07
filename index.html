@@ -24,65 +24,51 @@
     </div>
   </body>
     <script>
-    var searchRoot = document.getElementById('search_1');
-    var allProducts = [{
-      'name':'Note 1',
-      'price':'10k',
-      'keywords':['all', 'mobiles', 'electronics','gadgets', 'note']
-    },{
-      'name':'Note 7',
-      'price':'50k',
-      'keywords':['all', 'mobiles', 'electronics','gadgets', 'note']
-    },{
-      'name':'Macbook Pro',
-      'price':'50k',
-      'keywords':['all', 'laptops', 'electronics','gadgets']
-    },{
-      'name':'Macbook Air',
-      'price':'50k',
-      'keywords':['all','laptops', 'electronics','gadgets']
-    },{
-      'name':'Note 1',
-      'price':'10k',
-      'keywords':['all', 'mobiles', 'electronics','gadgets']
-    },{
-      'name':'Shirt',
-      'price':'50k',
-      'keywords':['all','shirts', 'cloths','cotton']
-    },{
-      'name':'T-Shirt',
-      'price':'50k',
-      'keywords':['all','shirts', 'cloths','red']
-    },{
-      'name':'skirt',
-      'price':'50k',
-      'keywords':['all', 'skirts', 'cloths','blue']
-    }];
-    var itemsRoot = document.getElementById('search_items_1');
-    function onSearchComplete(searchResult=[]){
-      var items = new Items(itemsRoot, searchResult);
-      items.render();
-    }
-    var searchBar = new Search(searchRoot, allProducts, onSearchComplete);
-    searchBar.render();
-
-    var carouselData = [
-      {
-        url:'https://i.picsum.photos/id/0/5616/3744.jpg'
-      },
-      {
-        url:'https://i.picsum.photos/id/10/2500/1667.jpg'
-      },
-      {
-        url:'https://i.picsum.photos/id/1002/4312/2868.jpg'
-      },{
-        url:'https://i.picsum.photos/id/1011/5472/3648.jpg'
-      },{
-        url:'https://i.picsum.photos/id/1015/6000/4000.jpg'
-      }
-    ];
+      var searchRoot = document.getElementById('search_1');
+      // var itemsRoot = document.getElementById('search_items_1');
+      // var items = new Items(itemsRoot);
+      var allProducts = [
+        {
+          url:'https://i.picsum.photos/id/0/5616/3744.jpg',
+          name:'Iphone 7',
+          price:'50k',
+          categories :['mobiles', 'electronics']
+        },
+        {
+          url:'https://i.picsum.photos/id/10/2500/1667.jpg',
+          name:'Iphone 10',
+          price:'90k',
+          categories :['mobiles', 'electronics']
+        },
+        {
+          url:'https://i.picsum.photos/id/1002/4312/2868.jpg',
+          name:'X shirt',
+          price:'1k',
+          categories :['fashion']
+        },{
+          url:'https://i.picsum.photos/id/1011/5472/3648.jpg',
+          name:'X Skirt',
+          price:'2k',
+          categories :['fashion']
+        },{
+          url:'https://i.picsum.photos/id/1015/6000/4000.jpg',
+          name:'Macbook Pro',
+          price:'200k',
+          categories :['electronics', 'laptops']
+        },{
+          url:'https://i.picsum.photos/id/1015/6000/4000.jpg',
+          name:'Macbook Air',
+          price:'100k',
+          categories :['electronics', 'laptops']
+        }
+      ];
       var carouselRoot = document.getElementById('carousel_1');
-      var carousel = new Carousel(carouselRoot, carouselData);
-      carousel.render();
+      var carousel = new Carousel(carouselRoot);
+      function onSearchComplete(searchResult=[]){
+        carousel.render(searchResult);
+      }
+      var searchBar = new Search(searchRoot, allProducts, onSearchComplete);
+      searchBar.render();
+      carousel.render(allProducts);
     </script>
 </html>
