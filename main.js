@@ -47,12 +47,16 @@ var Shell = function(){
     const sliderWidth = slider.offsetWidth;
     slider.style.left = `${slider.offsetLeft - sliderWidth}px`;
     this.currentSlide += 1;
+    if(this.currentSlide>1){
+      left_arrow.classList.remove('disabled');
+    }
     if(this.currentSlide === sizeOfCarouselData){
       right_arrow.classList.add('disabled');
-      left_arrow.classList.remove('disabled');
     }
   }
   Shell.prototype.handleLeftArrowClick = function(){
+    const {carouselData} = Shell;
+    const sizeOfCarouselData = carouselData.length;
     const {refs:{slider, left_arrow, right_arrow}} = this;
     if(this.currentSlide === 1){
       return;
@@ -60,9 +64,12 @@ var Shell = function(){
     const sliderWidth = slider.offsetWidth;
     slider.style.left = `${slider.offsetLeft + sliderWidth}px`;
     this.currentSlide -= 1;
+
+    if(this.currentSlide<sizeOfCarouselData){
+      right_arrow.classList.remove('disabled');
+    }
     if(this.currentSlide === 1){
       left_arrow.classList.add('disabled');
-      right_arrow.classList.remove('disabled');
     }
   }
   Shell.prototype.addClickOnArrow = function(){

@@ -29,6 +29,6 @@
 }
 
 .disabled{
-  pinter-events:none;
+  pointer-events:none!important;
   opacity: 0.5;
 }
