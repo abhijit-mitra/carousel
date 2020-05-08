@@ -13,7 +13,7 @@ var Search = function(){
   Search.prototype.handleSubmit = function(e){
     e.preventDefault();
     const value = e.target[0].value.toLowerCase();
-    const filteredData = this.data.filter((elm)=>(elm.keywords.some(keyword=>keyword.includes(value))));
+    const filteredData = this.data.filter((elm)=>(elm.categories.some(keyword=>keyword.includes(value))));
     this.onSearchComplete(filteredData);
   }
   Search.prototype.addEvents = function(){

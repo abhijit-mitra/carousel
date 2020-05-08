@@ -27,17 +27,18 @@ var Carousel = function(){
                   shell += `<div class='arrow left position-absolute cursor-pointer disabled'>
                                 <i class="fas fa-chevron-left white"></i>
                             </div>
-                            <div class='arrow right position-absolute cursor-pointer'>
+                            <div class='arrow right position-absolute cursor-pointer ${carouselData.length===3?'disabled':''}'>
                               <i class="fas fa-chevron-right white"></i>
                             </div>`;
                 shell +=`</div>`;
     this.parent.innerHTML =  shell;
+    this.currentSlide = 1;
     this.addClickOnArrow();
   };
   Carousel.prototype.handleRightArrowClick = function(){
     const {carouselData} = this;
+    console.log(carouselData);
     const {refs:{slider, left_arrow, right_arrow, screens}} = this;
-    console.log(screens);
     right_arrow.classList.add('disabled');
     const sizeOfCarouselData = carouselData.length;
     if(this.currentSlide >= sizeOfCarouselData){

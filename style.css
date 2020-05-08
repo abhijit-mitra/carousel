@@ -53,3 +53,7 @@
   height: 75%;
   transition: height 1s;
 }
+
+#multiSelect_1{
+  height: 180px;
+}
