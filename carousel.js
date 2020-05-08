@@ -10,7 +10,7 @@ var Carousel = function(){
                         for(let i=0;i<sizeOfCarouselData;i++){
                           shell += `<div id='screen_${i+1}' class='screens w-33 ${i===midIndex?'h-100':''} flex-none'>
                                       <div class='w-100 h-100 position-relative'>
-                                        <img class='w-100 h-100' src=${carouselData[i].url}/>
+                                        <img class='w-100 h-100' src=${carouselData[i].url} />
                                         <div class="position-absolute p-5 white top-0">
                                           <h2 class="position-relative">
                                               ${carouselData[i].name}
